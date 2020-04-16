@@ -203,7 +203,6 @@ questions:
     type: int
     min: 30000
     max: 32767
-    show_if: "ingress.enabled=false&&service.type=NodePort"
     label: NodePort Http Port
   - variable: service.nodePorts.https
     default: ""
@@ -211,5 +210,4 @@ questions:
     type: int
     min: 30000
     max: 32767
-    show_if: "ingress.enabled=false&&service.type=NodePort"
     label: NodePort Https Port
