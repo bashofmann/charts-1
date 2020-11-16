@@ -787,7 +787,7 @@ diff -x '*.tgz' -x '*.lock' -uNr packages/rancher-monitoring/charts-original/tem
  {{ toYaml .Values.alertmanager.secret.annotations | indent 4 }}
  {{- end }}
    labels:
-@@ -20,4 +28,237 @@
+@@ -20,4 +28,137 @@
  {{- range $key, $val := .Values.alertmanager.templateFiles }}
    {{ $key }}: {{ $val | b64enc | quote }}
  {{- end }}

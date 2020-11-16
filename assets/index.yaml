@@ -1,0 +1,147 @@
+apiVersion: v1
+entries:
+  rancher-monitoring:
+  - annotations:
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/prometheus-community/helm-charts
+        - name: Upstream Project
+          url: https://github.com/prometheus-operator/kube-prometheus
+      artifacthub.io/operator: "true"
+      catalog.cattle.io/auto-install: rancher-monitoring-crd=match
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/display-name: Monitoring
+      catalog.cattle.io/namespace: cattle-monitoring-system
+      catalog.cattle.io/provides-gvr: monitoring.coreos.com.prometheus/v1
+      catalog.cattle.io/release-name: rancher-monitoring
+      catalog.cattle.io/ui-component: monitoring
+    apiVersion: v1
+    appVersion: 0.38.1
+    created: "2020-11-16T16:01:13.942821+01:00"
+    dependencies:
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 2.8.14
+    - condition: nodeExporter.enabled
+      name: prometheus-node-exporter
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 1.11.2
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 5.6.4
+    - condition: prometheus-adapter.enabled
+      name: prometheus-adapter
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 2.4.0
+    - alias: rkeControllerManager
+      condition: rkeControllerManager.enabled
+      name: rancher-pushprox
+      repository: file://../../rancher-pushprox/charts
+      version: 0.1.1
+    - alias: rkeScheduler
+      condition: rkeScheduler.enabled
+      name: rancher-pushprox
+      repository: file://../../rancher-pushprox/charts
+      version: 0.1.1
+    - alias: rkeProxy
+      condition: rkeProxy.enabled
+      name: rancher-pushprox
+      repository: file://../../rancher-pushprox/charts
+      version: 0.1.1
+    - alias: rkeEtcd
+      condition: rkeEtcd.enabled
+      name: rancher-pushprox
+      repository: file://../../rancher-pushprox/charts
+      version: 0.1.1
+    - alias: k3sServer
+      condition: k3sServer.enabled
+      name: rancher-pushprox
+      repository: file://../../rancher-pushprox/charts
+      version: 0.1.1
+    - alias: kubeAdmControllerManager
+      condition: kubeAdmControllerManager.enabled
+      name: rancher-pushprox
+      repository: file://../../rancher-pushprox/charts
+      version: 0.1.1
+    - alias: kubeAdmScheduler
+      condition: kubeAdmScheduler.enabled
+      name: rancher-pushprox
+      repository: file://../../rancher-pushprox/charts
+      version: 0.1.1
+    - alias: kubeAdmProxy
+      condition: kubeAdmProxy.enabled
+      name: rancher-pushprox
+      repository: file://../../rancher-pushprox/charts
+      version: 0.1.1
+    - alias: kubeAdmEtcd
+      condition: kubeAdmEtcd.enabled
+      name: rancher-pushprox
+      repository: file://../../rancher-pushprox/charts
+      version: 0.1.1
+    - alias: rke2ControllerManager
+      condition: rke2ControllerManager.enabled
+      name: rancher-pushprox
+      repository: file://../../rancher-pushprox/charts
+      version: 0.1.1
+    - alias: rke2Scheduler
+      condition: rke2Scheduler.enabled
+      name: rancher-pushprox
+      repository: file://../../rancher-pushprox/charts
+      version: 0.1.1
+    - alias: rke2Proxy
+      condition: rke2Proxy.enabled
+      name: rancher-pushprox
+      repository: file://../../rancher-pushprox/charts
+      version: 0.1.1
+    - alias: rke2Etcd
+      condition: rke2Etcd.enabled
+      name: rancher-pushprox
+      repository: file://../../rancher-pushprox/charts
+      version: 0.1.1
+    description: Collects several related Helm charts, Grafana dashboards, and Prometheus
+      rules combined with documentation and scripts to provide easy to operate end-to-end
+      Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.
+    digest: 98bb17b2fa5bb1a4767d7040d7cde1cfb3e81c63f7f2328d20f09b798e8c9b3c
+    home: https://github.com/prometheus-operator/kube-prometheus
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    - monitoring
+    maintainers:
+    - name: vsliouniaev
+    - name: bismarck
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: github.gkarthiks@gmail.com
+      name: gkarthiks
+    - email: scott@r6by.com
+      name: scottrigby
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    name: rancher-monitoring
+    sources:
+    - https://github.com/prometheus-community/helm-charts
+    - https://github.com/prometheus-operator/kube-prometheus
+    urls:
+    - assets/rancher-monitoring/rancher-monitoring-9.4.202.tgz
+    version: 9.4.202
+  rancher-monitoring-crd:
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/namespace: cattle-monitoring-system
+      catalog.cattle.io/release-name: rancher-monitoring-crd
+    apiVersion: v1
+    created: "2020-11-16T16:01:13.946717+01:00"
+    description: Installs the CRDs for rancher-monitoring.
+    digest: 4a1cee959cec63d1a2eed9b83172972f9e6d16879b8e6eaed3c4bf027bfe1fe7
+    name: rancher-monitoring-crd
+    type: application
+    urls:
+    - assets/rancher-monitoring/rancher-monitoring-crd-9.4.202.tgz
+    version: 9.4.202
+generated: "2020-11-16T16:01:13.921181+01:00"
