@@ -65,7 +65,7 @@ rules:
   - apiGroups:
     - policy
     resourceNames:
-    - p"{{ .Release.Name }}-rke-aggregator"
+    - "{{ .Release.Name }}-rke-aggregator"
     resources:
     - podsecuritypolicies
     verbs:
