@@ -368,8 +368,8 @@ entries:
     - security
     name: rancher-logging
     urls:
-    - assets/rancher-logging/rancher-logging-3.8.202.tgz
-    version: 3.8.202
+    - assets/rancher-logging/rancher-logging-3.8.203.tgz
+    version: 3.8.203
   rancher-logging-crd:
   - annotations:
       catalog.cattle.io/certified: rancher
@@ -383,8 +383,8 @@ entries:
     name: rancher-logging-crd
     type: application
     urls:
-    - assets/rancher-logging/rancher-logging-crd-3.8.202.tgz
-    version: 3.8.202
+    - assets/rancher-logging/rancher-logging-crd-3.8.203.tgz
+    version: 3.8.203
   rancher-monitoring:
   - annotations:
       artifacthub.io/links: |
